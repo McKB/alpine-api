@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon server.js",
     "lint": "npm run lint:pug && npm run lint:eslint",
     "lint:pug": "pug-lint .",
     "lint:eslint": "eslint --format codeframe ."
