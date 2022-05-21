@@ -2,32 +2,43 @@
     height: 100%;
     width: 150px;
     position: fixed;
-    z-index: 1;
     background-color: rgb(193, 193, 237);
+}
+
+.sidebar-link {
+    display: block;
 }
 
 .content {
     margin: 0 10% 0 15%;
 }
 
+.doc {
+    width: 100%;
+    margin-top: 10px;
+}
+
 .method {
     background-color: rgb(193, 193, 237);
-    padding: 10px 10% 10px 10%;
-    margin-right: 5px;
-    display: inline;
+    padding: 10px 0 10px 0;
+    width: 20%;
+    float: left;
+    text-align: center;
     color: white;
 }
 
 .route {
     background-color: rgb(131, 131, 184);
-    padding: 10px 28.4% 10px 28.4%;
-    display: inline;
+    padding: 10px 0 10px 0;
+    margin-left: 5px;
+    float: inline-right;
+    text-align: center;
     color: white;
 }
 
 .description {
     background-color: rgb(72, 72, 99);
-    margin-top: 15px;
+    margin-top: 5px;
     text-align: center;
     padding: 10px 0 10px 0;
     display: block;
