@@ -1,0 +1,42 @@
+.sidebar {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(193, 193, 237);
+}
+
+.content {
+    margin: 0 10% 0 15%;
+}
+
+.method {
+    background-color: rgb(193, 193, 237);
+    padding: 10px 10% 10px 10%;
+    margin-right: 5px;
+    display: inline;
+    color: white;
+}
+
+.route {
+    background-color: rgb(131, 131, 184);
+    padding: 10px 28.4% 10px 28.4%;
+    display: inline;
+    color: white;
+}
+
+.description {
+    background-color: rgb(72, 72, 99);
+    margin-top: 15px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    display: block;
+    color: white;
+}
+
+.response {
+    background-color: rgb(109, 109, 119);
+    color: white;
+    margin-top: 5px;
+    padding: 1px 10px 1px 10px;
+}

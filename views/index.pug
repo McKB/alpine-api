@@ -1,6 +1,9 @@
 html
+    include partials/head.pug 
     body 
         h1 Alpine API
-        h2 Documentation 
-        div(class='doc' id='get-resorts') 
-            include partials/getResorts.pug
+        div(class='sidebar')
+        div(class='content')
+            h2(class='documentation-title') Documentation 
+            div(class='doc' id='get-resorts') 
+                include partials/getResorts.pug
