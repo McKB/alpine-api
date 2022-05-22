@@ -1,7 +1,9 @@
 .sidebar {
     height: 100%;
     width: 150px;
-    position: fixed;
+    position: sticky;
+    float: left;
+    top: 0px;
     background-color: rgb(193, 193, 237);
 }
 
