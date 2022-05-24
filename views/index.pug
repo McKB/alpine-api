@@ -3,12 +3,18 @@ html
     body 
         h1 Alpine API
         div(class='sidebar')
-            a(href='#get-resorts' class='sidebar-link') Get Resorts
-            a(href='#get-resort-by-id' class='sidebar-link') Get Resort By ID 
-            a(href='#get-resort-by-name' class='sidebar-link') Get Resort By Name
-            a(href='#post-resort' class='sidebar-link') Post a Resort 
-            a(href='#delete-resort' class='sidebar-link') Delete a Resort 
-        div(class='content')
+            div 
+                a(href='#get-resorts' class='sidebar-link') Get Resorts
+                a(href='#get-resort-by-id' class='sidebar-link') Get Resort By ID 
+                a(href='#get-resort-by-name' class='sidebar-link') Get Resort By Name
+                a(href='#post-resort' class='sidebar-link') Post a Resort 
+                a(href='#delete-resort' class='sidebar-link') Delete a Resort 
+            div 
+                a(href='#get-chairlifts' class='sidebar-link') Get Chairlifts 
+                a(href='#get-chairlift-by-resort' class='sidebar-link') Get Chairlifts by Resort  
+                a(href='#post-chairlift' class='sidebar-link') Post a Chairlift  
+                a(href='#delete-chairlift' class='sidebar-link') Delete a Chairlift  
+        div(class='content' id='resort-content')
             h2(class='documentation-title') Documentation 
             div(class='doc' id='get-resorts') 
                 include partials/getResorts.pug
@@ -20,3 +26,12 @@ html
                 include partials/postResort.pug
             div(class='doc' id='delete-resort')
                 include partials/deleteResort.pug
+        div(class='content' id='chairlift-content')
+            div(class='doc' id='get-chairlifts') 
+                include partials/getChairlifts.pug
+            div(class='doc' id='get-chairlift-by-resort')
+                include partials/getChairliftByResort.pug 
+            div(class='doc' id='post-chairlift')
+                include partials/postChairlift.pug
+            div(class='doc' id='delete-chairlift')
+                include partials/deleteChairlift.pug
