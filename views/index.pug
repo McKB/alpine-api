@@ -5,9 +5,18 @@ html
         div(class='sidebar')
             a(href='#get-resorts' class='sidebar-link') Get Resorts
             a(href='#get-resort-by-id' class='sidebar-link') Get Resort By ID 
+            a(href='#get-resort-by-name' class='sidebar-link') Get Resort By Name
+            a(href='#post-resort' class='sidebar-link') Post a Resort 
+            a(href='#delete-resort' class='sidebar-link') Delete a Resort 
         div(class='content')
             h2(class='documentation-title') Documentation 
             div(class='doc' id='get-resorts') 
                 include partials/getResorts.pug
             div(class='doc' id='get-resort-by-id')
                 include partials/getResortById.pug 
+            div(class='doc' id='get-resort-by-name')
+                include partials/getResortByName.pug
+            div(class='doc' id='post-resort')
+                include partials/postResort.pug
+            div(class='doc' id='delete-resort')
+                include partials/deleteResort.pug
