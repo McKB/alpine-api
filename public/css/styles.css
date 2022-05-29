@@ -60,7 +60,7 @@ body {
 
 .route {
     background-color: rgb(131, 131, 184);
-    padding: 10px 0 10px 0;
+    padding: 10px;
     margin-left: 5px;
     float: inline-left;
     text-align: center;
@@ -71,7 +71,7 @@ body {
     background-color: rgb(72, 72, 99);
     margin-top: 5px;
     text-align: center;
-    padding: 10px 0 10px 0;
+    padding: 10px;
     display: block;
     color: white;
 }
@@ -81,4 +81,20 @@ body {
     color: white;
     margin: 5px 0 50px 0;
     padding: 1px 10px 1px 10px;
+}
+
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+@media (max-width: 800px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        margin: 0 10% 0 10%;
+    }
 }
