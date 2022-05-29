@@ -4,7 +4,7 @@ body {
 
 .sidebar {
     height: 100%;
-    width: 150px;
+    width: 170px;
     position: sticky;
     float: left;
     top: 0px;
@@ -25,6 +25,13 @@ body {
 
 .side-section {
     border-bottom: 20px solid rgb(131, 131, 184);
+    border-top: 1px solid white;
+}
+
+.back-to-top {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
     border-top: 1px solid white;
 }
 
@@ -89,12 +96,18 @@ pre {
     word-wrap: break-word;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .sidebar {
         display: none;
     }
     
     .content {
         margin: 0 10% 0 10%;
+    }
+}
+
+@media (max-height: 506px) {
+    .sidebar {
+        height: 506px;
     }
 }
