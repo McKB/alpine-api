@@ -1,27 +1,29 @@
 html
     include partials/head.pug 
     body 
-        h1 Alpine API
+        div(class='header')
+            a(href='/')
+                img(src="/images/alpine.png", class='logo', height='120')
+            div(class='line')
         div(class='sidebar')
-            div 
+            div(class='side-section')
                 a(href='#get-resorts' class='sidebar-link') Get Resorts
                 a(href='#get-resort-by-id' class='sidebar-link') Get Resort By ID 
                 a(href='#get-resort-by-name' class='sidebar-link') Get Resort By Name
                 a(href='#post-resort' class='sidebar-link') Post a Resort 
                 a(href='#delete-resort' class='sidebar-link') Delete a Resort 
-            div 
+            div(class='side-section')
                 a(href='#get-chairlifts' class='sidebar-link') Get Chairlifts 
                 a(href='#get-chairlift-by-resort' class='sidebar-link') Get Chairlifts by Resort  
                 a(href='#post-chairlift' class='sidebar-link') Post a Chairlift  
                 a(href='#delete-chairlift' class='sidebar-link') Delete a Chairlift 
-            div 
+            div(class='side-section')
                 a(href='#get-stats' class='sidebar-link') Get Stats  
                 a(href='#get-stats-by-resort' class='sidebar-link') Get Stats by Resort (id)
                 a(href='#post-stats' class='sidebar-link') Post Stats   
                 a(href='#delete-stats' class='sidebar-link') Delete Stats  
 
         div(class='content' id='resort-content')
-            h2(class='documentation-title') Documentation 
             div(class='doc' id='get-resorts') 
                 include partials/getResorts.pug
             div(class='doc' id='get-resort-by-id')

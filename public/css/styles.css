@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .sidebar {
     height: 100%;
     width: 150px;
@@ -19,13 +23,29 @@
     background-color: rgb(72, 72, 99);
 }
 
+.side-section {
+    border-bottom: 20px solid rgb(131, 131, 184);
+    border-top: 1px solid white;
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(230, 230, 245);
+}
+
+.line {
+    background-color: rgb(131, 131, 184);
+    height: 1px;
+    width: 100%;
+}
+
 .content {
-    margin: 0 10% 0 15%;
+    margin: 0 10% 0 20%;
 }
 
 .doc {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .method {
@@ -34,6 +54,7 @@
     width: 20%;
     float: left;
     text-align: center;
+    border-right: 5px solid white;
     color: white;
 }
 
@@ -41,7 +62,7 @@
     background-color: rgb(131, 131, 184);
     padding: 10px 0 10px 0;
     margin-left: 5px;
-    float: inline-right;
+    float: inline-left;
     text-align: center;
     color: white;
 }
@@ -58,6 +79,6 @@
 .response {
     background-color: rgb(109, 109, 119);
     color: white;
-    margin-top: 5px;
+    margin: 5px 0 50px 0;
     padding: 1px 10px 1px 10px;
 }

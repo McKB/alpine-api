@@ -1,7 +1,7 @@
 div
     div(class = 'method') GET 
     div(class = 'route') http://localhost:1337/resorts/{name}
-    div(class = 'description') Returns the ski resort that corresponds with the given name.
+    div(class = 'description') Returns the ski resort and stats that correspond with the given resort name.
     div(class = 'response')
         pre
             | [{
@@ -11,5 +11,14 @@ div
             |   website: "https://www.stowe.com/"
             |   createdAt: null ,
             |   updatedAt: null,
-            |   deletedAt: null
+            |   deletedAt: null,
+            |   stats: {
+            |       trails: 116,
+            |       acres: 485,
+            |       verticalDrop: 2360,
+            |       highestElevation: 3625,
+            |       createdAt: null,
+            |       updatedAt: null,
+            |       deletedAt: null
+            |   }
             | }]
