@@ -20,7 +20,8 @@ html
             div(class='side-section')
                 a(href='#get-stats' class='sidebar-link') Get Stats  
                 a(href='#get-stats-by-resort' class='sidebar-link') Get Stats by Resort (id)
-                a(href='#post-stats' class='sidebar-link') Post Stats   
+                a(href='#post-stats' class='sidebar-link') Post Stats 
+                a(href='#put-stats' class='sidebar-link') Put Stats
                 a(href='#delete-stats' class='sidebar-link') Delete Stats  
 
         div(class='content' id='resort-content')
@@ -52,5 +53,7 @@ html
                 include partials/getStatsByResort.pug 
             div(class='doc' id='post-stats')
                 include partials/postStats.pug
+            div(class='doc' id='put-stats')
+                include partials/putStats.pug
             div(class='doc' id='delete-stats')
                 include partials/deleteStats.pug
