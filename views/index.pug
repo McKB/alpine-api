@@ -8,7 +8,6 @@ html
         div(class='sidebar')
             div(class='side-section')
                 a(href='#get-resorts' class='sidebar-link') Get Resorts
-                a(href='#get-resort-by-id' class='sidebar-link') Get Resort By ID 
                 a(href='#get-resort-by-name' class='sidebar-link') Get Resort By Name
                 a(href='#post-resort' class='sidebar-link') Post a Resort 
                 a(href='#delete-resort' class='sidebar-link') Delete a Resort 
@@ -29,8 +28,6 @@ html
         div(class='content' id='resort-content')
             div(class='doc' id='get-resorts') 
                 include partials/getResorts.pug
-            div(class='doc' id='get-resort-by-id')
-                include partials/getResortById.pug 
             div(class='doc' id='get-resort-by-name')
                 include partials/getResortByName.pug
             div(class='doc' id='post-resort')
