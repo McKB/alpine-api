@@ -1,0 +1,23 @@
+div
+    div(class = 'method') POST 
+    div(class = 'route') http://localhost:1337/resorts
+    div(class = 'description') Posts a new ski resort to the database given the data in the body.
+    div(class = 'response')
+        div Body: 
+        pre
+            | {
+            |   resortName: "NewInTown",
+            |   town: "Oz"
+            |   website: "https://www.newintown.com/"
+            | }
+        div Response: 
+        pre
+            | [{
+            |   id: 29,
+            |   resortName: "NewInTown",
+            |   town: "Oz"
+            |   website: "https://www.newintown.com/"
+            |   createdAt: null ,
+            |   updatedAt: null,
+            |   deletedAt: null
+            | }]

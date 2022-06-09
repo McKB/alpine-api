@@ -1,0 +1,27 @@
+div
+    div(class = 'method') POST 
+    div(class = 'route') http://localhost:1337/chairlifts
+    div(class = 'description') Posts a new chairlift to the database with the given data. 
+    div(class = 'response')
+        div Body: 
+        pre 
+            | {
+            |   liftType: "Gondola",
+            |   liftName: "Over Easy Gondola",
+            |   resortId: 23,
+            |   shapeLength: 491.7109834617
+            |  }
+        div Response: 
+        pre
+            | ...
+            | [{
+            |   id: 27,
+            |   liftType: "Gondola",
+            |   liftName: "Over Easy Gondola",
+            |   resortId: 23,
+            |   shapeLength: 491.7109834617,
+            |   createdAt: null,
+            |   updatedAt: null,
+            |   deletedAt: null
+            | }]
+            | ... 

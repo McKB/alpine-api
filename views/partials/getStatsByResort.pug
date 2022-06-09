@@ -1,0 +1,16 @@
+div
+    div(class = 'method') GET 
+    div(class = 'route') http://localhost:1337/stats/{resortId}
+    div(class = 'description') Returns the stats that corresponds with the given resort ID. Measurements given in feet.
+    div(class = 'response')
+        pre
+            | [{
+            |   resortId: 10,
+            |   trails: 81,
+            |   acres: 385,
+            |   verticalDrop: 2153,
+            |   highestElevation: 3968,
+            |   createdAt: null,
+            |   updatedAt: null,
+            |   deletedAt: null
+            | }]
