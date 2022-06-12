@@ -8,7 +8,7 @@ const {
   addResort,
   deleteResortById
 } = require('../../controllers/resorts.ctrl')
-const { resorts } = require('../../models/index.model')
+const { Resorts } = require('../../models/index.model')
 const { resortsList, resortA, resortB, incompleteResort } = require('../mocks/resorts')
 
 chai.use(sinonChai)
@@ -16,10 +16,10 @@ const { expect } = chai
 
 describe('testing the resorts controller', () => {
   let sandbox = sinon.createSandbox()
-  let stubbedFindAll = sandbox.stub(resorts, 'findAll')
-  let stubbedFindOne = sandbox.stub(resorts, 'findOne')
-  let stubbedCreate = sinon.stub(resorts, 'create')
-  let stubbedDestroy = sinon.stub(resorts, 'destroy')
+  let stubbedFindAll = sandbox.stub(Resorts, 'findAll')
+  let stubbedFindOne = sandbox.stub(Resorts, 'findOne')
+  let stubbedCreate = sinon.stub(Resorts, 'create')
+  let stubbedDestroy = sinon.stub(Resorts, 'destroy')
   let stubbedSend = sandbox.stub()
   let stubbedStatus = sandbox.stub()
   let stubbedSendStatus = sandbox.stub()
