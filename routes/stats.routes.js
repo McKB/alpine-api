@@ -1,10 +1,17 @@
 const express = require('express')
 const router = express.Router()
+const {
+  getAllStatsWithResorts,
+  getStatsByResortIdWithResorts,
+  addNewStats,
+  updateStatsByResortId,
+  deleteStatsByResortId
+} = require('../controllers/stats.ctrl')
 
-router.get('/')
-router.get('/:resortId')
-router.post('/')
-router.put('/update/:resortId')
-router.delete('/:resortId')
+router.get('/', getAllStatsWithResorts)
+router.get('/:resortId', getStatsByResortIdWithResorts)
+router.post('/', addNewStats)
+router.put('/update/:resortId', updateStatsByResortId)
+router.delete('/:resortId', deleteStatsByResortId)
 
 module.exports = router
