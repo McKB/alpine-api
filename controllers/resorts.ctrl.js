@@ -50,8 +50,22 @@ const addResort = async (req, res) => {
   }
 }
 
-const deleteResortById = () => {
+const deleteResortById = async (req, res) => {
+  try {
+    const searchedId = parseInt(req.params.id)
+    const resort = await models.Resorts.findOne({ where: { id: searchedId } })
 
+    if (!resort) {
+      return res.status(404).send(`Resort #${searchedId} does not exist.`)
+    }
+
+    await models.Resorts.destroy({ where: { id: searchedId } })
+
+    return res.status(200).send(`We have removed resort #${searchedId} from the database.`)
+  }
+  catch (error) {
+    return res.sendStatus(500)
+  }
 }
 
 module.exports = { getAllResorts, getResortByNameWithStats, addResort, deleteResortById }
