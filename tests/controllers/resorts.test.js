@@ -19,8 +19,8 @@ describe('testing the resorts controller', () => {
   let sandbox = sinon.createSandbox()
   let stubbedFindAll = sandbox.stub(Resorts, 'findAll')
   let stubbedFindOne = sandbox.stub(Resorts, 'findOne')
-  let stubbedCreate = sinon.stub(Resorts, 'create')
-  let stubbedDestroy = sinon.stub(Resorts, 'destroy')
+  let stubbedCreate = sandbox.stub(Resorts, 'create')
+  let stubbedDestroy = sandbox.stub(Resorts, 'destroy')
   let stubbedSend = sandbox.stub()
   let stubbedStatus = sandbox.stub()
   let stubbedSendStatus = sandbox.stub()
@@ -149,13 +149,12 @@ describe('testing the resorts controller', () => {
       expect(stubbedFindOne).to.have.callCount(1)
       expect(stubbedDestroy).to.have.been.calledWith({ where: { id: 23 } })
       expect(stubbedDestroy).to.have.callCount(1)
-      expect(response.status).to.have.been.calledWith(200)
-      expect(response.send).to.have.been.calledWith('We have removed resort #23 from the database.')
+      expect(stubbedStatus).to.have.been.calledWith(200)
+      expect(stubbedSend).to.have.been.calledWith('We have removed resort #23 from the database.')
     })
 
     it('sends 404 when resort does not exist', async () => {
       stubbedFindOne.returns(null)
-
       const request = { params: { id: 99 } }
 
       await deleteResortById(request, response)
@@ -163,7 +162,7 @@ describe('testing the resorts controller', () => {
       expect(stubbedFindOne).to.have.been.calledWith({ where: { id: 99 } })
       expect(stubbedFindOne).to.have.callCount(1)
       expect(stubbedDestroy).to.have.callCount(0)
-      expect(response.status).to.have.been.calledWith(404)
+      expect(stubbedStatus).to.have.been.calledWith(404)
       expect(stubbedSend).to.have.been.calledWith('Resort #99 does not exist.')
     })
 
