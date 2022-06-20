@@ -11,7 +11,7 @@
     "lint:eslint": "eslint --format codeframe .",
     "lint:fix": "eslint --fix --format codeframe .",
     "lint:pug": "pug-lint .",
-    "test": "mocha tests/**/*.test.js"
+    "test": "env-cmd mocha tests/**/*.test.js"
   },
   "repository": {
     "type": "git",

@@ -9,7 +9,7 @@ const {
   deleteResortById
 } = require('../../controllers/resorts.ctrl')
 const { Resorts } = require('../../models/index.model')
-const models = require('../../models')
+const models = require('../../models/index.model')
 const { resortsList, resortA, resortB, incompleteResort } = require('../mocks/resorts')
 
 chai.use(sinonChai)

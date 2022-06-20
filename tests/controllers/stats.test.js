@@ -10,7 +10,7 @@ const {
   deleteStatsByResortId
 } = require('../../controllers/resorts.ctrl')
 const { Stats } = require('../../models/index.model')
-const models = require('../../models')
+const models = require('../../models/index.model')
 const {
   statsList, statsA, statsB, statsC, incompleteStats, invalidStats
 } = require('../mocks/stats')
