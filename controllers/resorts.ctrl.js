@@ -12,6 +12,7 @@ const getAllResorts = async (req, res) => {
     return res.sendStatus(500)
   }
 }
+
 const getResortByNameWithStats = async (req, res) => {
   try {
     const { name } = req.params
@@ -31,9 +32,24 @@ const getResortByNameWithStats = async (req, res) => {
     return res.sendStatus(500)
   }
 }
-const addResort = () => {
 
+const addResort = async (req, res) => {
+  try {
+    const { resortName, town, website } = req.body
+
+    if (!resortName || !town || !website) {
+      return res.sendStatus(400)
+    }
+
+    const newResort = await models.Resorts.create({ resortName, town, website })
+
+    return res.status(201).send(newResort)
+  }
+  catch (error) {
+    return res.sendStatus(500)
+  }
 }
+
 const deleteResortById = () => {
 
 }
