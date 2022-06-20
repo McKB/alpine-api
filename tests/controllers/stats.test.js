@@ -70,7 +70,7 @@ describe('testing the stats controller', () => {
 
       await getStatsByResortIdWithResorts(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 13 }, include: [{ model: models.resorts }] })
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 13 }, include: [{ model: models.Resorts }] })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedStatus).to.have.been.calledWith(200)
       expect(stubbedSend).to.have.been.calledWith(statsA)
@@ -79,11 +79,11 @@ describe('testing the stats controller', () => {
     it('returns 404 when no stats are found in the database for that resort', async () => {
       const request = { params: { resortId: 99 } }
 
-      stubbedFindAll.returns(null)
+      stubbedFindAll.returns([])
 
       await getStatsByResortIdWithResorts(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 99 }, include: [{ model: models.resorts }] })
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 99 }, include: [{ model: models.Resorts }] })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedStatus).to.have.been.calledWith(404)
       expect(stubbedSend).to.have.been.calledWith('Stats do not exist for this resort or the resort does not exist.')
@@ -96,7 +96,7 @@ describe('testing the stats controller', () => {
 
       await getStatsByResortIdWithResorts(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 13 }, include: [{ model: models.resorts }] })
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 13 }, include: [{ model: models.Resorts }] })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedSendStatus).to.have.been.calledWith(500)
     })

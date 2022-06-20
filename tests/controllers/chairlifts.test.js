@@ -75,7 +75,7 @@ describe('testing the chairlifts controller', () => {
     it('returns 404 when no lifts are found in the database for the resort ID', async () => {
       const request = { params: { resortId: 99 } }
 
-      stubbedFindAll.returns(null)
+      stubbedFindAll.returns([])
 
       await getChairliftByResortId(request, response)
 
