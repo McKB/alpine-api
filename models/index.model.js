@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize')
 const config = require('../configs/sequelize')
-const { chairlifts, resorts, stats } = require('.')
+const { chairlifts } = require('./chairlifts.model')
+const { resorts } = require('./resorts.model')
+const { stats } = require('./stats.model')
 
 const environment = process.env.NODE_ENV || 'development'
 const { username, password, database, host, dialect } = config[environment] //eslint-disable-line
