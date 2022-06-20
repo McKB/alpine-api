@@ -66,7 +66,10 @@ describe('testing the resorts controller', () => {
 
       await getResortByNameWithStats(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'stowe' }, include: [{ model: models.stats }] })
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { resortName: { [models.Op.like]: '%stowe%' } },
+        include: [{ model: models.Stats }]
+      })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedStatus).to.have.been.calledWith(200)
       expect(stubbedSend).to.have.been.calledWith(resortA)
@@ -74,12 +77,15 @@ describe('testing the resorts controller', () => {
     it('returns 404 when no resort is found in the database', async () => {
       const request = { params: { name: 'unknown_resort' } }
 
-      stubbedFindAll.returns(null)
+      stubbedFindAll.returns([])
 
       await getResortByNameWithStats(request, response)
 
       // eslint-disable-next-line max-len
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'unknown_resort' }, include: [{ model: models.stats }] })
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { resortName: { [models.Op.like]: '%unknown_resort%' } },
+        include: [{ model: models.Stats }]
+      })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedStatus).to.have.been.calledWith(404)
       expect(stubbedSend).to.have.been.calledWith('Resort does not exist.')
@@ -91,7 +97,10 @@ describe('testing the resorts controller', () => {
 
       await getResortByNameWithStats(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'stowe' }, include: [{ model: models.stats }] })
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { resortName: { [models.Op.like]: '%stowe%' } },
+        include: [{ model: models.Stats }]
+      })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedSendStatus).to.have.been.calledWith(500)
     })
