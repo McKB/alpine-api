@@ -27,12 +27,17 @@ const statsA = {
   trails: 53,
   acres: 115,
   verticalDrop: 2037,
-  highestElevation: 3637
+  highestElevation: 3637,
+  resorts: [{
+    resortName: 'Mad River Glen',
+    town: 'Waitsfield',
+    website: 'www.madriverglen.com'
+  }]
 }
 
 const statsB = {
   resortId: 20,
-  trails: 120,
+  trails: 20,
   acres: 1200,
   verticalDrop: 1200,
   highestElevation: 1200
@@ -49,8 +54,12 @@ const incompleteStats = {
   highestElevation: 1200
 }
 
+const invalidStats = {
+  trails: 'not a number - invalid data'
+}
+
 
 
 module.exports = {
-  statsList, statsA, statsB, statsC, incompleteStats
+  statsList, statsA, statsB, statsC, incompleteStats, invalidStats
 }

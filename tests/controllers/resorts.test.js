@@ -9,6 +9,7 @@ const {
   deleteResortById
 } = require('../../controllers/resorts.ctrl')
 const { Resorts } = require('../../models/index.model')
+const models = require('../../models')
 const { resortsList, resortA, resortB, incompleteResort } = require('../mocks/resorts')
 
 chai.use(sinonChai)
@@ -65,7 +66,7 @@ describe('testing the resorts controller', () => {
 
       await getResortByNameWithStats(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'stowe' } })
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'stowe' }, include: [{ model: models.stats }] })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedStatus).to.have.been.calledWith(200)
       expect(stubbedSend).to.have.been.calledWith(resortA)
@@ -77,7 +78,8 @@ describe('testing the resorts controller', () => {
 
       await getResortByNameWithStats(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'unknown_resort' } })
+      // eslint-disable-next-line max-len
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'unknown_resort' }, include: [{ model: models.stats }] })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedStatus).to.have.been.calledWith(404)
       expect(stubbedSend).to.have.been.calledWith('Resort does not exist.')
@@ -89,7 +91,7 @@ describe('testing the resorts controller', () => {
 
       await getResortByNameWithStats(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'stowe' } })
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { name: 'stowe' }, include: [{ model: models.stats }] })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedSendStatus).to.have.been.calledWith(500)
     })

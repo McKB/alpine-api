@@ -20,7 +20,14 @@ const resortA = {
   id: 23,
   resortName: 'Stowe',
   town: 'Stowe',
-  website: 'www.stowe.com'
+  website: 'www.stowe.com',
+  stats: {
+    resortId: 23,
+    trails: 53,
+    acres: 115,
+    verticalDrop: 2037,
+    highestElevation: 3637
+  }
 }
 
 const resortB = {
