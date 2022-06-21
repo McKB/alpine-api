@@ -59,8 +59,53 @@ const addNewStats = async (req, res) => {
     return res.sendStatus(500)
   }
 }
-const updateStatsByResortId = () => {
+const updateStatsByResortId = async (req, res) => {
+  try {
+    let { trails, acres, verticalDrop, highestElevation } = req.body
+    const foundId = req.params.resortId
 
+    const resort = await models.Stats.findOne({ where: { resortId: foundId } })
+
+    if (!resort) {
+      return res.status(404).send('Resort does not have stats. Please POST some first.')
+    }
+
+    if (trails) {
+      trails = Number(trails)
+      if (isNaN(trails)) {
+        return res.sendStatus(400)
+      }
+      await models.Stats.update({ trails }, { where: { resortId: foundId } })
+    }
+    if (acres) {
+      acres = Number(acres)
+      if (isNaN(acres)) {
+        return res.sendStatus(400)
+      }
+      await models.Stats.update({ acres }, { where: { resortId: foundId } })
+    }
+    if (verticalDrop) {
+      verticalDrop = Number(verticalDrop)
+      if (isNaN(verticalDrop)) {
+        return res.sendStatus(400)
+      }
+      await models.Stats.update({ verticalDrop }, { where: { resortId: foundId } })
+    }
+    if (highestElevation) {
+      highestElevation = Number(highestElevation)
+      if (isNaN(highestElevation)) {
+        return res.sendStatus(400)
+      }
+      await models.Stats.update({ highestElevation }, { where: { resortId: foundId } })
+    }
+
+    const updatedStats = await models.Stats.findOne({ where: { resortId: foundId } })
+
+    return res.status(201).send(updatedStats)
+  }
+  catch (error) {
+    return res.sendStatus(500)
+  }
 }
 const deleteStatsByResortId = () => {
 
