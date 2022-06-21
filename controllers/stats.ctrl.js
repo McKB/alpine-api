@@ -33,8 +33,31 @@ const getStatsByResortIdWithResorts = async (req, res) => {
   }
 }
 
-const addNewStats = () => {
+const addNewStats = async (req, res) => {
+  try {
+    const {
+      resortId, trails, acres, verticalDrop, highestElevation
+    } = req.body
 
+    if (!resortId) {
+      return res.sendStatus(400)
+    }
+
+    const existingStats = await models.Stats.findOne({ where: { resortId } })
+
+    if (existingStats) {
+      return res.status(400).send('Resort already has stats, please make a put request')
+    }
+
+    const newStats = await models.Stats.create({
+      resortId, trails, acres, verticalDrop, highestElevation
+    })
+
+    return res.status(201).send(newStats)
+  }
+  catch (error) {
+    return res.sendStatus(500)
+  }
 }
 const updateStatsByResortId = () => {
 
