@@ -142,8 +142,8 @@ describe('testing the chairlifts controller', () => {
       expect(stubbedFindOne).to.have.callCount(1)
       expect(stubbedDestroy).to.have.been.calledWith({ where: { id: 86 } })
       expect(stubbedDestroy).to.have.callCount(1)
-      expect(response.status).to.have.been.calledWith(200)
-      expect(response.send).to.have.been.calledWith('We have removed chairlift #86 from the database.')
+      expect(stubbedStatus).to.have.been.calledWith(200)
+      expect(stubbedSend).to.have.been.calledWith('We have removed chairlift #86 from the database.')
     })
 
     it('sends 404 when chairlift does not exist', async () => {
@@ -156,7 +156,7 @@ describe('testing the chairlifts controller', () => {
       expect(stubbedFindOne).to.have.been.calledWith({ where: { id: 999 } })
       expect(stubbedFindOne).to.have.callCount(1)
       expect(stubbedDestroy).to.have.callCount(0)
-      expect(response.status).to.have.been.calledWith(404)
+      expect(stubbedStatus).to.have.been.calledWith(404)
       expect(stubbedSend).to.have.been.calledWith('Chairlift #999 does not exist.')
     })
 
