@@ -28,8 +28,22 @@ const getChairliftByResortId = async (req, res) => {
     return res.sendStatus(500)
   }
 }
-const addChairlift = () => {
 
+const addChairlift = async (req, res) => {
+  try {
+    const { liftType, liftName, resortId, shapeLength } = req.body
+
+    if (!liftType || !liftName || !resortId || !shapeLength) {
+      return res.sendStatus(400)
+    }
+
+    const newLift = await models.Chairlifts.create({ liftType, liftName, resortId, shapeLength })
+
+    return res.status(201).send(newLift)
+  }
+  catch (error) {
+    return res.sendStatus(500)
+  }
 }
 const deleteChairliftById = () => {
 
