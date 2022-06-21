@@ -61,13 +61,13 @@ describe('testing the chairlifts controller', () => {
 
   describe('getChairliftByResortId', () => {
     it('gets a chairlift (or multiple) from the database based on resort ID', async () => {
-      const request = { params: { resortId: 18 } }
+      const request = { params: { resortId: 17 } }
 
       stubbedFindAll.returns(liftsFor17)
 
       await getChairliftByResortId(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 18 } })
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 17 } })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedStatus).to.have.been.calledWith(200)
       expect(stubbedSend).to.have.been.calledWith(liftsFor17)
@@ -85,13 +85,13 @@ describe('testing the chairlifts controller', () => {
       expect(stubbedSend).to.have.been.calledWith('Resort does not exist or has no chairlifts.')
     })
     it('returns 500 when the database is down', async () => {
-      const request = { params: { resortId: 18 } }
+      const request = { params: { resortId: 17 } }
 
       stubbedFindAll.throws('Error')
 
       await getChairliftByResortId(request, response)
 
-      expect(stubbedFindAll).to.have.been.calledWith({ where: { id: 18 } })
+      expect(stubbedFindAll).to.have.been.calledWith({ where: { resortId: 17 } })
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedSendStatus).to.have.been.calledWith(500)
     })
