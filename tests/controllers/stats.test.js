@@ -148,7 +148,7 @@ describe('testing the stats controller', () => {
       expect(stubbedUpdate).to.have.been.calledWith(statsC, { where: { resortId: 20 } })
       expect(stubbedUpdate).to.have.callCount(1)
       expect(stubbedFindOne).to.have.been.calledWith({ where: { resortId: 20 } })
-      expect(stubbedFindOne).to.have.callCount(1)
+      expect(stubbedFindOne).to.have.callCount(2)
       expect(stubbedStatus).to.have.been.calledWith(201)
       expect(stubbedSend).to.have.been.calledWith(statsB)
     })
@@ -156,19 +156,27 @@ describe('testing the stats controller', () => {
     it('sends 400 status if data type is incorrect', async () => {
       const request = { body: invalidStats, params: { resortId: 20 } }
 
+      stubbedFindOne.returns(statsB)
+
       await updateStatsByResortId(request, response)
 
+      expect(stubbedFindOne).to.have.callCount(1)
+      expect(stubbedFindOne).to.have.been.calledWith({ where: { resortId: 20 } })
       expect(stubbedSendStatus).to.have.been.calledWith(400)
     })
 
     it('sends 500 status if database errors out', async () => {
-      const request = { body: statsC }
+      const request = { body: statsC, params: { resortId: 20 } }
 
+      stubbedFindOne.returns(statsB)
       stubbedUpdate.throws('Error')
 
       await updateStatsByResortId(request, response)
 
+      expect(stubbedFindOne).to.have.callCount(1)
+      expect(stubbedFindOne).to.have.been.calledWith({ where: { resortId: 20 } })
       expect(stubbedUpdate).to.have.been.calledWith(statsC, { where: { resortId: 20 } })
+      expect(stubbedUpdate).to.have.callCount(1)
       expect(stubbedSendStatus).to.have.been.calledWith(500)
     })
   })
