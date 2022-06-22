@@ -107,8 +107,22 @@ const updateStatsByResortId = async (req, res) => {
     return res.sendStatus(500)
   }
 }
-const deleteStatsByResortId = () => {
+const deleteStatsByResortId = async (req, res) => {
+  try {
+    const searchedId = parseInt(req.params.resortId)
+    const stats = await models.Stats.findOne({ where: { resortId: searchedId } })
 
+    if (!stats) {
+      return res.status(404).send(`Resort #${searchedId} does not exist or has no stats associated with it.`)
+    }
+
+    await models.Stats.destroy({ where: { resortId: searchedId } })
+
+    return res.status(200).send(`We have removed the stats associated with resort #${searchedId} from the database.`)
+  }
+  catch (error) {
+    return res.sendStatus(500)
+  }
 }
 
 module.exports = {
