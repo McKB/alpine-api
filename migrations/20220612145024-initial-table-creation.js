@@ -24,8 +24,7 @@ module.exports = {
     })
 
     return queryInterface.createTable('stats', {
-      id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-      resortId: { type: Sequelize.INTEGER, references: { model: 'resorts', key: 'id' } },
+      resortId: { type: Sequelize.INTEGER, primaryKey: true, references: { model: 'resorts', key: 'id' } },
       trails: { type: Sequelize.INTEGER },
       acres: { type: Sequelize.FLOAT },
       verticalDrop: { type: Sequelize.FLOAT },
