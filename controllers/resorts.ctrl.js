@@ -59,6 +59,13 @@ const deleteResortById = async (req, res) => {
       return res.status(404).send(`Resort #${searchedId} does not exist.`)
     }
 
+    const hasStats = await models.Stats.findOne({ where: { resortId: searchedId } })
+    const hasLifts = await models.Chairlifts.findOne({ where: { resortId: searchedId } })
+
+    if (hasStats || hasLifts) {
+      return res.status(400).send('Resort has dependent stats or chairlifts that need to be removed.')
+    }
+
     await models.Resorts.destroy({ where: { id: searchedId } })
 
     return res.status(200).send(`We have removed resort #${searchedId} from the database.`)
