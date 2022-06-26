@@ -12,7 +12,7 @@ const {
 const { Stats } = require('../../models/index.model')
 const models = require('../../models/index.model')
 const {
-  statsList, statsA, statsB, statsC, incompleteStats, invalidStats
+  statsList, statsA, statsB, statsC, statsD, incompleteStats, invalidStats
 } = require('../mocks/stats')
 
 chai.use(sinonChai)
@@ -163,6 +163,22 @@ describe('testing the stats controller', () => {
       expect(stubbedFindOne).to.have.callCount(2)
       expect(stubbedStatus).to.have.been.calledWith(201)
       expect(stubbedSend).to.have.been.calledWith(statsB)
+    })
+
+    it('POSTS stats if no stats group exists yet', async () => {
+      const request = { body: statsC, params: { resortId: 20 } }
+
+      stubbedFindOne.returns(null)
+      stubbedCreate.returns(statsD)
+
+      await updateStatsByResortId(request, response)
+
+      expect(stubbedCreate).to.have.been.calledWith(statsD)
+      expect(stubbedUpdate).to.have.callCount(0)
+      expect(stubbedFindOne).to.have.been.calledWith({ where: { resortId: 20 } })
+      expect(stubbedFindOne).to.have.callCount(1)
+      expect(stubbedStatus).to.have.been.calledWith(201)
+      expect(stubbedSend).to.have.been.calledWith(`Posted stats ${statsD}`)
     })
 
     it('sends 400 status if data type is incorrect', async () => {

@@ -47,6 +47,14 @@ const statsC = {
   trails: 20
 }
 
+const statsD = {
+  resortId: 20,
+  trails: 20,
+  acres: 0,
+  verticalDrop: 0,
+  highestElevation: 0
+}
+
 const incompleteStats = {
   trails: 120,
   acres: 1200,
@@ -61,5 +69,5 @@ const invalidStats = {
 
 
 module.exports = {
-  statsList, statsA, statsB, statsC, incompleteStats, invalidStats
+  statsList, statsA, statsB, statsC, statsD, incompleteStats, invalidStats
 }
