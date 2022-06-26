@@ -124,6 +124,18 @@ describe('testing the stats controller', () => {
       expect(stubbedSendStatus).to.have.been.calledWith(400)
     })
 
+    it('sends 400 status if resort already has stats', async () => {
+      const request = { body: statsB }
+
+      stubbedFindOne.returns(statsB)
+
+      await addNewStats(request, response)
+
+      expect(stubbedStatus).to.have.been.calledWith(400)
+      expect(stubbedSend).to.have.been.calledWith('Resort already has stats, please make a put request to update.')
+      expect(stubbedCreate).to.have.callCount(0)
+    })
+
     it('sends 500 status if database errors out', async () => {
       const request = { body: statsB }
 

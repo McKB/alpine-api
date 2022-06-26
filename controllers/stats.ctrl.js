@@ -46,7 +46,7 @@ const addNewStats = async (req, res) => {
     const existingStats = await models.Stats.findOne({ where: { resortId } })
 
     if (existingStats) {
-      return res.status(400).send('Resort already has stats, please make a put request')
+      return res.status(400).send('Resort already has stats, please make a put request to update.')
     }
 
     const newStats = await models.Stats.create({
