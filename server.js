@@ -3,6 +3,7 @@ const app = express()
 
 app.set('view engine', 'pug')
 app.use(express.static('public'))
+app.use(express.json())
 
 const resortsRouter = require('./routes/resorts.routes')
 const chairliftsRouter = require('./routes/chairlifts.routes')
