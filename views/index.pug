@@ -2,7 +2,7 @@ html
     include partials/head.pug 
     body 
         div(class='header')
-            a(href='/')
+            a(href='/api')
                 img(src="/images/alpine.png", class='logo', height='120')
             div(class='line')
         div(class='sidebar')
@@ -23,7 +23,7 @@ html
                 a(href='#put-stats' class='sidebar-link') Put Stats
                 a(href='#delete-stats' class='sidebar-link') Delete Stats
             div(class='back-to-top')
-                a(href='/' class='sidebar-link') Back to Top
+                a(href='/api' class='sidebar-link') Back to Top
 
         div(class='content' id='resort-content')
             div(class='doc' id='get-resorts') 

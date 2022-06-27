@@ -1,10 +1,12 @@
 div
     div(class = 'method') PUT 
-    div(class = 'route') http://localhost:1337/stats/update/{resortId}
-    div(class = 'description') Updates an existing group of stats (or creates a new one if the resortId does not already exist) in the database.
+    div(class = 'route') http://localhost:1337/api/stats/update/{resortId}
+    div(class = 'description') Updates an existing group of stats, or creates a new one if the resortId does not already have an associated group of stats.
     div(class = 'response')
         div Body: 
         pre
+            | [given resortId as parameter]
+            |
             | {
             |   trails: 101
             | }
