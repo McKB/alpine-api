@@ -6,23 +6,25 @@ import background from './bg.jpeg'
 
 const HomePage = () => {
     return (
-        <Container fluid className='text-center text-light' 
-            style={{ height: '100vh', backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
-            <Row style={{ paddingTop: '30vh' }}>
-                <h1>
-                    Welcome to the Alpine Zone
-                </h1>
-            </Row>
-            <Row>
-                <p className='fst-italic'>Please tread lightly.</p>
-            </Row>
-            <Row className='justify-content-center'>
-                <Col md='auto'>
-                    <Link to={'/browse'}>
-                        <BrowseButton items='resorts' />
-                    </Link>
-                </Col>
-            </Row>
+        <Container fluid className='justify-content-center text-light vh-100 d-flex align-items-center' 
+            style={{backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
+            <div className='text-center'>
+                <Row>
+                    <h1>
+                        Welcome to the Alpine Zone
+                    </h1>
+                </Row>
+                <Row>
+                    <p className='fst-italic pb-5'>Please tread lightly.</p>
+                </Row>
+                <Row className='justify-content-center pt-5'>
+                    <Col md='auto'>
+                        <Link to={'/browse'}>
+                            <BrowseButton items='resorts' />
+                        </Link>
+                    </Col>
+                </Row>
+            </div>
         </Container>
     )
 }
