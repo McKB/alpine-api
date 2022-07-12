@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import BrowseButton from '../../components/BrowseButton'
 import background from './bg.jpeg'
 
@@ -17,7 +18,9 @@ const HomePage = () => {
             </Row>
             <Row className='justify-content-center'>
                 <Col md='auto'>
-                    <BrowseButton items='resorts' />
+                    <Link to={'/browse'}>
+                        <BrowseButton items='resorts' />
+                    </Link>
                 </Col>
             </Row>
         </Container>
