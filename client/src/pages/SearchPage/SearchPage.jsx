@@ -1,7 +1,9 @@
-import Search from '../../components/Search'
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import Search from '../../components/Search'
 import TableList from '../../components/TableList'
+import BackButton from '../../components/BackButton'
 import axios from 'axios'
 
 const SearchPage = () => {
@@ -30,8 +32,13 @@ const SearchPage = () => {
     }
 
     return (
-        <div>
-            <Row className='p-5'>
+        <div className='m-5'>
+            <Row className='my-5 text-center'>
+                <Link to={'/'}>
+                    <BackButton previousLocation='home'/>
+                </Link>
+            </Row>
+            <Row>
                 <Col md='auto'>
                     <p>Search a resort name: </p>
                 </Col>
@@ -39,7 +46,7 @@ const SearchPage = () => {
                     <Search searchTerm={searchTerm} handleSearchTermInput={handleSearchTermInput} />
                 </Col>
             </Row>
-            <Row className='px-5'>
+            <Row>
                 <TableList arr={filteredResortsArray} />
             </Row>
         </div>
