@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
+import { Link } from "react-router-dom"
 //import { Link } from 'react-router-dom'
 
 const TableList = (props) => {
@@ -14,13 +15,28 @@ const TableList = (props) => {
                     <th>Website</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className="w-100">
                 {arr.map((item) => {
                     return (
-                        <tr key={item.id}>
-                            <td className='w-25'>{item.resortName}</td>
-                            <td className='w-25'>{item.town}</td>
-                            <td className='w-50'>{item.website}</td>
+                        <tr key={item.id} className="w-100">
+                            <td>
+                                <Link 
+                                to={`/browse/${item.resortName}`} 
+                                className='text-reset text-decoration-none w-100'>
+                                {item.resortName}</Link>
+                            </td>
+                            <td>
+                                <Link
+                                to={`/browse/${item.resortName}`}
+                                className='text-reset text-decoration-none w-100'>
+                                {item.town}</Link>
+                            </td>
+                            <td>
+                                <a
+                                href={`https://${item.website}`}
+                                className='text-reset text-decoration-none w-100'>
+                                {item.website}</a>
+                            </td>
                         </tr>
                     )
                 })}
