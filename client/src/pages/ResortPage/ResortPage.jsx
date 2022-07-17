@@ -3,22 +3,34 @@ import { Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import StatsCard from '../../components/StatsCard'
+import ChairliftsCard from '../../components/ChairliftsCard'
 
 const ResortPage = () => {
   const { resort } = useParams()
   const [resortData, setResortData] = useState({})
   const [stats, setStats] = useState({})
+  const [chairlifts, setChairlifts] = useState([])
 
   useEffect(() => {
-  const fetchResort = async () => {
-    let { data } = await axios.get(`http://localhost:1337/api/resorts/${resort}`)
-    setResortData(data[0])
-    setStats(data[0].stat)
-  }
-  fetchResort()
+    const fetchResort = async () => {
+      let { data } = await axios.get(`http://localhost:1337/api/resorts/${resort}`)
+      setResortData(data[0])
+      setStats(data[0].stat)
+    }
+    fetchResort().catch(console.error)
   }, [resort])
 
-  console.log(stats)
+  useEffect(() => {
+    if (resortData.id) {
+    const fetchChairlifts = async () => {
+      let { data } = await axios.get(`http://localhost:1337/api/chairlifts/${resortData.id}`)
+      setChairlifts(data)
+    }
+    fetchChairlifts().catch(console.error)
+    } else {
+        setChairlifts(['...fetching'])
+    }
+  }, [resortData])
 
   return (
   <div>
@@ -30,6 +42,7 @@ const ResortPage = () => {
     <Container>
       <Row xs={1} md={2} className="g-4">
         <StatsCard stats={stats}/>
+        <ChairliftsCard chairlifts={chairlifts}/>
       </Row>
     </Container>
   </div>
