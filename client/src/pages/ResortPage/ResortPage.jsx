@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import StatsCard from '../../components/StatsCard'
@@ -41,8 +41,12 @@ const ResortPage = () => {
     </Container>
     <Container>
       <Row xs={1} md={2} className="g-4">
-        <StatsCard stats={stats}/>
-        <ChairliftsCard chairlifts={chairlifts}/>
+        <Col>
+          <StatsCard stats={stats}/>
+        </Col>
+        <Col>
+          <ChairliftsCard chairlifts={chairlifts}/>
+        </Col>
       </Row>
     </Container>
   </div>
