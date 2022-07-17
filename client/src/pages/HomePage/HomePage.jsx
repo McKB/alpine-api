@@ -10,7 +10,7 @@ const HomePage = () => {
             style={{backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
             <div className='text-center'>
                 <Row>
-                    <h1>
+                    <h1 className='fw-lighter'>
                         Welcome to the Alpine Zone
                     </h1>
                 </Row>

@@ -7,18 +7,18 @@ const TableList = (props) => {
     const { arr } = props
 
     return (
-        <Table hover>
-            <thead>
+        <Table hover className='mt-4 table-borderless'>
+            <thead className='table-dark'>
                 <tr>
-                    <th>Resort Name</th>
+                    <th className='rounded-start'>Resort Name</th>
                     <th>Town</th>
-                    <th>Website</th>
+                    <th className='rounded-end'>Website</th>
                 </tr>
             </thead>
             <tbody className="w-100">
                 {arr.map((item) => {
                     return (
-                        <tr key={item.id} className="w-100">
+                        <tr key={item.id} className="w-100 border-bottom">
                             <td>
                                 <Link 
                                 to={`/browse/${item.resortName}`} 

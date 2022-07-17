@@ -5,6 +5,7 @@ import axios from 'axios'
 import StatsCard from '../../components/StatsCard'
 import ChairliftsCard from '../../components/ChairliftsCard'
 import BackButton from '../../components/BackButton'
+import background from './bg2.jpeg'
 
 const ResortPage = () => {
   const { resort } = useParams()
@@ -34,20 +35,20 @@ const ResortPage = () => {
   }, [resortData])
 
   return (
-  <div>
-    <Container className="m-5">
+  <Container fluid className='min-vh-100 pb-5' style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
+    <Container className="p-5">
       <Row>
-        <h1 className="text-center fw-lighter" style={{fontSize: '4rem'}}>{resortData.resortName}</h1>
+        <h1 className="text-center fw-lighter text-light" style={{fontSize: '4rem'}}>{resortData.resortName}</h1>
       </Row>
     </Container>
     <Container>
       <Row xs={1} md={2} className="g-4">
         <Col>
           <StatsCard stats={stats}/>
-          <Row className='m-5'>
+          <Row className='pt-5'>
             <Col className='d-flex justify-content-center'>
-              <Link to={'/browse'}>
-                <BackButton previousLocation='browse'/>
+              <Link to={'/browse'} className='w-100'>
+                <BackButton className='w-100' previousLocation='browse' color='primary'/>
               </Link>
             </Col>
           </Row>
@@ -57,7 +58,7 @@ const ResortPage = () => {
         </Col>
       </Row>
     </Container>
-  </div>
+  </Container>
   )
 }
 

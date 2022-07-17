@@ -32,11 +32,13 @@ const SearchPage = () => {
     }
 
     return (
-        <div className='m-5'>
-            <Row className='my-5 text-center'>
+        <div className='m-5 fw-lighter'>
+            <Row className='my-5'>
+              <div className='w-25'>
                 <Link to={'/'}>
-                    <BackButton previousLocation='home'/>
+                    <BackButton previousLocation='home' color='dark'/>
                 </Link>
+              </div>
             </Row>
             <Row>
                 <Col md='auto'>

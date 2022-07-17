@@ -1,10 +1,10 @@
 import { Button } from 'react-bootstrap'
 
 const BackButton = (props) => {
-    const { previousLocation } = props
+    const { previousLocation, color } = props
 
     return (
-        <Button variant='dark' className='p-2'>
+        <Button variant={color} className='p-4 w-100'>
             ← Back to {previousLocation}
         </Button>
     )
