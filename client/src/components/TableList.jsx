@@ -34,6 +34,8 @@ const TableList = (props) => {
                             <td>
                                 <a
                                 href={`https://${item.website}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className='text-reset text-decoration-none w-100'>
                                 {item.website}</a>
                             </td>
