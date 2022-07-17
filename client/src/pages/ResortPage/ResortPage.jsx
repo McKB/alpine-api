@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import StatsCard from '../../components/StatsCard'
 import ChairliftsCard from '../../components/ChairliftsCard'
+import BackButton from '../../components/BackButton'
 
 const ResortPage = () => {
   const { resort } = useParams()
@@ -43,6 +44,13 @@ const ResortPage = () => {
       <Row xs={1} md={2} className="g-4">
         <Col>
           <StatsCard stats={stats}/>
+          <Row className='m-5'>
+            <Col className='d-flex justify-content-center'>
+              <Link to={'/browse'}>
+                <BackButton previousLocation='browse'/>
+              </Link>
+            </Col>
+          </Row>
         </Col>
         <Col>
           <ChairliftsCard chairlifts={chairlifts}/>
