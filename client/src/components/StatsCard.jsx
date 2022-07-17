@@ -12,11 +12,11 @@ const StatsCard = (props) => {
           <Tab.Container defaultActiveKey="#trails">
             <Row>
               <Col className="md-auto">
-                <ListGroup>
-                  <ListGroup.Item href="#trails">Trails</ListGroup.Item>
-                  <ListGroup.Item href="#vertical">Vertical Drop (ft)</ListGroup.Item>
-                  <ListGroup.Item href="#acres">Acres</ListGroup.Item>
-                  <ListGroup.Item href="#elevation">Highest Elevation (ft)</ListGroup.Item>
+                <ListGroup style={{cursor: 'pointer'}}>
+                  <ListGroup.Item eventKey="#trails">Trails</ListGroup.Item>
+                  <ListGroup.Item eventKey="#vertical">Vertical Drop (ft)</ListGroup.Item>
+                  <ListGroup.Item eventKey="#acres">Acres</ListGroup.Item>
+                  <ListGroup.Item eventKey="#elevation">Highest Elevation (ft)</ListGroup.Item>
                 </ListGroup>
               </Col>
               <Col>

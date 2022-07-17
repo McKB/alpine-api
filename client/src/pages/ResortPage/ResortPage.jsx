@@ -5,6 +5,7 @@ import axios from 'axios'
 import StatsCard from '../../components/StatsCard'
 import ChairliftsCard from '../../components/ChairliftsCard'
 import BackButton from '../../components/BackButton'
+import GoToButton from '../../components/GoToButton'
 import background from './bg3.jpeg'
 
 const ResortPage = () => {
@@ -45,11 +46,16 @@ const ResortPage = () => {
       <Row xs={1} md={2} className="g-4">
         <Col>
           <StatsCard stats={stats}/>
-          <Row className='pt-5'>
-            <Col className='d-flex justify-content-center'>
-              <Link to={'/browse'} className='w-100'>
-                <BackButton className='w-100' previousLocation='browse' color='primary'/>
+          <Row className='pt-5 text-center'>
+            <Col>
+              <Link to={'/browse'}>
+                <BackButton previousLocation='browse' color='primary'/>
               </Link>
+            </Col>
+            <Col>
+              <a href={`https://${resortData.website}`} target="_blank" rel="noopener noreferrer">
+                <GoToButton nextLocation='site' color='primary' />
+              </a>
             </Col>
           </Row>
         </Col>
