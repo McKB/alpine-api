@@ -5,7 +5,7 @@ import axios from 'axios'
 import StatsCard from '../../components/StatsCard'
 import ChairliftsCard from '../../components/ChairliftsCard'
 import BackButton from '../../components/BackButton'
-import background from './bg2.jpeg'
+import background from './bg3.jpeg'
 
 const ResortPage = () => {
   const { resort } = useParams()
@@ -35,9 +35,9 @@ const ResortPage = () => {
   }, [resortData])
 
   return (
-  <Container fluid className='min-vh-100 pb-5' style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
-    <Container className="p-5">
-      <Row>
+  <Container fluid className='min-vh-100 px-0 pb-5'>
+    <Container className="py-5 mx-0 mb-5 min-vw-100" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
+      <Row className='p-5'>
         <h1 className="text-center fw-lighter text-light" style={{fontSize: '4rem'}}>{resortData.resortName}</h1>
       </Row>
     </Container>

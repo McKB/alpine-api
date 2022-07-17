@@ -7,8 +7,8 @@ const ChairliftsCard = (props) => {
 
   return (
     <>
-      <Card>
-        <Card.Header>Lifts</Card.Header>
+      <Card bg="light" border="primary">
+        <Card.Header className="fw-lighter fs-4">Lifts</Card.Header>
         <Card.Body>
           <Accordion flush>
             {chairlifts.map((lift) => {

@@ -6,8 +6,8 @@ const StatsCard = (props) => {
 
   return (
     <>
-      <Card>
-        <Card.Header>Stats</Card.Header>
+      <Card bg="light" border="primary">
+        <Card.Header className="fw-lighter fs-4">Stats</Card.Header>
         <Card.Body>
           <Tab.Container defaultActiveKey="#trails">
             <Row>
