@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 170px;
+    position: sticky;
+    float: left;
+    top: 0px;
+    background-color: rgb(193, 193, 237);
+}
+
+.sidebar-link {
+    display: block;
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(72, 72, 99);
+}
+
+.side-section {
+    border-bottom: 20px solid rgb(131, 131, 184);
+    border-top: 1px solid white;
+}
+
+.back-to-top {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid white;
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(230, 230, 245);
+}
+
+.line {
+    background-color: rgb(131, 131, 184);
+    height: 1px;
+    width: 100%;
+}
+
+.content {
+    margin: 0 10% 0 20%;
+}
+
+.doc {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.method {
+    background-color: rgb(193, 193, 237);
+    padding: 10px 0 10px 0;
+    width: 20%;
+    float: left;
+    text-align: center;
+    border-right: 5px solid white;
+    color: white;
+}
+
+.route {
+    background-color: rgb(131, 131, 184);
+    padding: 10px;
+    margin-left: 5px;
+    float: inline-left;
+    text-align: center;
+    color: white;
+}
+
+.description {
+    background-color: rgb(72, 72, 99);
+    margin-top: 5px;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    color: white;
+}
+
+.response {
+    background-color: rgb(109, 109, 119);
+    color: white;
+    margin: 5px 0 50px 0;
+    padding: 1px 10px 1px 10px;
+}
+
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        margin: 0 10% 0 10%;
+    }
+}
+
+@media (max-height: 506px) {
+    .sidebar {
+        height: 506px;
+    }
+}

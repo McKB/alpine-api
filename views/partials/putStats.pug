@@ -1,0 +1,24 @@
+div
+    div(class = 'method') PUT 
+    div(class = 'route') http://localhost:1337/api/stats/update/{resortId}
+    div(class = 'description') Updates an existing group of stats, or creates a new one if the resortId does not already have an associated group of stats.
+    div(class = 'response')
+        div Body: 
+        pre
+            | [given resortId as parameter]
+            |
+            | {
+            |   trails: 101
+            | }
+        div Response: 
+        pre
+            | [{
+            |   resortId: 22,
+            |   trails: 101,
+            |   acres: 1000,
+            |   verticalDrop: 2610,
+            |   highestElevation: 3640,
+            |   createdAt: null,
+            |   updatedAt: null,
+            |   deletedAt: null
+            | }]

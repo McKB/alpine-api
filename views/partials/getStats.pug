@@ -1,0 +1,45 @@
+div
+    div(class = 'method') GET 
+    div(class = 'route') http://localhost:1337/api/stats 
+    div(class = 'description') Returns a list of all stats for each resort in Vermont. Measurements given in feet.
+    div(class = 'response')
+        pre
+                | ...
+                | [{
+                |   resortId: 1,
+                |   trails: 8,
+                |   acres: 26,
+                |   verticalDrop: 450,
+                |   highestElevation: 1250,
+                |   createdAt: null,
+                |   updatedAt: null,
+                |   deletedAt: null,
+                |   resort: {
+                |        id: 1,
+                |        resortName: "Ascutney Outdoors",
+                |        town: "Brownsville",
+                |        website: "www.ascutneyoutdoors.org/skiing",
+                |        createdAt: null,
+                |        updatedAt: null,
+                |        deletedAt: null
+                |    }
+                | }, {
+                |   resortId: 2,
+                |   trails: 2,
+                |   acres: 5,
+                |   verticalDrop: 200,
+                |   highestElevation: 700,
+                |   createdAt: null,
+                |   updatedAt: null,
+                |   deletedAt: null,
+                |   resort: {
+                |        id: 2,
+                |        resortName: "Bellows Falls",
+                |        town: "Bellows Falls",
+                |        website: "www.facebook.com/Bellows-Falls-Rope-tow-191875957504078/about",
+                |        createdAt: null,
+                |        updatedAt: null,
+                |        deletedAt: null
+                |    }
+                | }]
+                | ... 
