@@ -1,0 +1,26 @@
+div
+    div(class = 'method') POST 
+    div(class = 'route') http://localhost:1337/stats
+    div(class = 'description') Posts a new group of stats to the database given the data in the body. Give measurements in feet.
+    div(class = 'response')
+        div Body: 
+        pre
+            | {
+            |   resortId: 99,
+            |   trails: 99,
+            |   acres: 999,
+            |   verticalDrop: 9999,
+            |   highestElevation: 9999,
+            | }
+        div Response: 
+        pre
+            | [{
+            |   resortId: 99,
+            |   trails: 99,
+            |   acres: 999,
+            |   verticalDrop: 9999,
+            |   highestElevation: 9999,
+            |   createdAt: null,
+            |   updatedAt: null,
+            |   deletedAt: null
+            | }]
