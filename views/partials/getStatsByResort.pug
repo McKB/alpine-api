@@ -1,7 +1,7 @@
 div
     div(class = 'method') GET 
-    div(class = 'route') http://localhost:1337/stats/{resortId}
-    div(class = 'description') Returns the stats that corresponds with the given resort ID. Measurements given in feet.
+    div(class = 'route') http://localhost:1337/api/stats/{resortId}
+    div(class = 'description') Returns the stats that correspond with the given resort ID. Measurements given in feet.
     div(class = 'response')
         pre
             | [{
@@ -12,5 +12,14 @@ div
             |   highestElevation: 3968,
             |   createdAt: null,
             |   updatedAt: null,
-            |   deletedAt: null
+            |   deletedAt: null,
+            |   resort: {
+            |        id: 10,
+            |        resortName: "Jay Peak",
+            |        town: "Jay",
+            |        website: "www.jaypeakresort.com",
+            |        createdAt: null,
+            |        updatedAt: null,
+            |        deletedAt: null
+            |    }
             | }]
