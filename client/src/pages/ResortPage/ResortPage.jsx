@@ -16,7 +16,7 @@ const ResortPage = () => {
 
   useEffect(() => {
     const fetchResort = async () => {
-      let { data } = await axios.get(`http://localhost:1337/api/resorts/${resort}`)
+      let { data } = await axios.get(`/api/resorts/${resort}`)
       setResortData(data[0])
       setStats(data[0].stat)
     }
@@ -26,7 +26,7 @@ const ResortPage = () => {
   useEffect(() => {
     if (resortData.id) {
     const fetchChairlifts = async () => {
-      let { data } = await axios.get(`http://localhost:1337/api/chairlifts/${resortData.id}`)
+      let { data } = await axios.get(`/api/chairlifts/${resortData.id}`)
       setChairlifts(data)
     }
     fetchChairlifts().catch(console.error)

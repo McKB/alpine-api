@@ -15,7 +15,10 @@
     "lint:eslint": "eslint --format codeframe .",
     "lint:fix": "eslint --fix --format codeframe .",
     "lint:pug": "pug-lint .",
-    "test": "env-cmd mocha tests/**/*.test.js"
+    "test": "env-cmd mocha tests/**/*.test.js",
+    "start": "node index.js",
+    "build": "npm run prod:migrate && cd client && npm install && npm run build",
+    "prod:migrate": " sequelize db:migrate --env production --config ./configs/sequelize.js"
   },
   "repository": {
     "type": "git",
