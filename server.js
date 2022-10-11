@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const cors = require('cors')
+const port = process.env.PORT || 1337
 
 app.set('view engine', 'pug')
 app.use(express.static('public'))
@@ -21,6 +22,6 @@ app.use('/api', indexRouter)
 
 app.all('*', (req, res) => { res.sendFile(path.resolve(__dirname, 'client/build', 'index.html')) })
 
-app.listen(1337, () => {
-  console.log('listening at http://localhost:1337....') // eslint-disable-line no-console
+app.listen(port, () => {
+  console.log(`listening at http://localhost:${port}....`) // eslint-disable-line no-console
 })

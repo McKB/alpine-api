@@ -22,7 +22,7 @@ const SearchPage = () => {
     }, [searchTerm, resortsArray])
 
     const fetchResorts = async () => {
-        let fetchedData = await axios.get('http://localhost:1337/api/resorts')
+        let fetchedData = await axios.get('/api/resorts')
         setResortsArray(fetchedData.data)
         setFilteredResortsArray(fetchedData.data)
     }
