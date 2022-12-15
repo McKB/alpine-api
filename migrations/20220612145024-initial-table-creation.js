@@ -8,7 +8,7 @@ module.exports = {
       town: { type: Sequelize.STRING },
       website: { type: Sequelize.STRING },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW()') },
-      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW() ON UPDATE NOW()') },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW()') },
       deletedAt: { type: Sequelize.DATE }
     })
 
@@ -19,7 +19,7 @@ module.exports = {
       resortId: { type: Sequelize.INTEGER, references: { model: 'resorts', key: 'id' } },
       shapeLength: { type: Sequelize.FLOAT },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW()') },
-      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW() ON UPDATE NOW()') },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW()') },
       deletedAt: { type: Sequelize.DATE }
     })
 
@@ -30,7 +30,7 @@ module.exports = {
       verticalDrop: { type: Sequelize.FLOAT },
       highestElevation: { type: Sequelize.FLOAT },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW()') },
-      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW() ON UPDATE NOW()') },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('NOW()') },
       deletedAt: { type: Sequelize.DATE }
     })
   },
