@@ -7,7 +7,7 @@ const TableList = (props) => {
     const { arr } = props
 
     return (
-        <Table hover className='mt-4 table-borderless'>
+        <Table hover responsive className='mt-4 table-borderless'>
             <thead className='table-dark'>
                 <tr>
                     <th className='rounded-start'>Resort Name</th>

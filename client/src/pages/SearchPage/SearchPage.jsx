@@ -34,7 +34,7 @@ const SearchPage = () => {
     return (
         <div className='m-5 fw-lighter'>
             <Row className='my-5'>
-              <div className='w-25'>
+              <div>
                 <Link to={'/'}>
                     <BackButton previousLocation='home' color='dark'/>
                 </Link>
@@ -49,7 +49,9 @@ const SearchPage = () => {
                 </Col>
             </Row>
             <Row>
-                <TableList arr={filteredResortsArray} />
+                <Col>
+                    <TableList arr={filteredResortsArray} />
+                </Col>
             </Row>
         </div>
     )
