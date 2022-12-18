@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import BrowseButton from '../../components/BrowseButton'
+import Footer from '../../components/Footer'
 import background from './bg.jpeg'
 
 const HomePage = () => {
@@ -33,7 +34,7 @@ const HomePage = () => {
                                     <Card.Text>
                                         Check out the project origins, data sources, and meet the designer.
                                     </Card.Text>
-                                    <Card.Link className='text-light fw-light' href="#">About this project</Card.Link>
+                                    <Card.Link className='text-light fw-light' href={'/about'}>About this project</Card.Link>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -45,7 +46,7 @@ const HomePage = () => {
                                         Explore the API directly. Check out the documentation
                                         for more information.
                                     </Card.Text>
-                                    <Card.Link className='text-light fw-light' href="#">API Docs</Card.Link>
+                                    <Card.Link className='text-light fw-light' href={'/api'}>API Docs</Card.Link>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -58,7 +59,7 @@ const HomePage = () => {
                                     <Card.Text>
                                         Browse Vermont's ski resorts and learn about their highlights. 
                                     </Card.Text>
-                                    <Card.Link className='text-light fw-light' href="#">Browse resorts</Card.Link>
+                                    <Card.Link className='text-light fw-light' href={'/browse'}>Browse resorts</Card.Link>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -76,9 +77,7 @@ const HomePage = () => {
                     </Row>
                 </Container>
                 <Row className='pt-5'>
-                    <footer className='bottom-0' style={{ backgroundColor: 'rgba(50, 50, 50, 0.5)'}}>
-                        <p className='fw-lighter text-light m-3'>&copy; 2022 McKenna Black</p>
-                    </footer>
+                   <Footer/>
                 </Row>
             </div>
         </Container>

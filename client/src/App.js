@@ -3,6 +3,7 @@ import SearchPage from './pages/SearchPage/SearchPage'
 import ResortPage from './pages/ResortPage/ResortPage'
 import ErrorPage from "./pages/ErrorPage/ErrorPage"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AboutPage from "./pages/AboutPage/AboutPage"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/browse/:resort' element={<ResortPage />} />
           <Route path='/browse' element={<SearchPage />} />
+          <Route path='/about' element={<AboutPage />} />
           <Route path='/' element={<HomePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
